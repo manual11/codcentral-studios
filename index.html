@@ -9,6 +9,16 @@
       gtag('js', new Date());
       gtag('config', 'G-MNBHJMQC0P');
     </script>
+    <!-- GitHub Pages SPA routing fix: restore URL from 404.html redirect -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codcentral Studios — Digital Leverage Systems</title>
