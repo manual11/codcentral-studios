@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { assetUrl } from '../lib/assetUrl'
 
 const actions = [
   {
@@ -326,7 +327,7 @@ export default function CaseStudy() {
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                 <img
-                  src="/Joy Caters-creative director pawslova.jpg"
+                  src={assetUrl('/Joy Caters-creative director pawslova.jpg')}
                   alt="Joy Caters"
                   style={{
                     width: 44,
@@ -376,7 +377,7 @@ export default function CaseStudy() {
         gap: 20,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <img src="/logo.jpeg" alt="Codcentral Studios" style={{ width: 56, height: 56, borderRadius: 4, objectFit: 'cover', display: 'block' }} />
+          <img src={assetUrl('/logo.jpeg')} alt="Codcentral Studios" style={{ width: 56, height: 56, borderRadius: 4, objectFit: 'cover', display: 'block' }} />
           <span style={{
             fontFamily: "'Godens','Bebas Neue','DM Sans',sans-serif",
             fontWeight: 900, fontSize: 13,

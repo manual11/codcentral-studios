@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import { assetUrl } from '../lib/assetUrl'
 // ── Shared styles ──────────────────────────────────────────────────────────
 const label = (color = 'rgba(255,255,255,0.35)'): React.CSSProperties => ({
   fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase' as const, color,
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
         borderBottom: '0.5px solid rgba(255,255,255,0.07)',
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
-          <img src="/logo.jpeg" alt="Codcentral" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover' }} />
+          <img src={assetUrl('/logo.jpeg')} alt="Codcentral" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover' }} />
           <span style={{ fontFamily: "'Godens','Bebas Neue',sans-serif", fontWeight: 900, fontSize: 13, color: 'var(--color-secondary)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Codcentral</span>
         </Link>
         <Link to="/" style={{ ...label(), textDecoration: 'none', transition: 'color 0.2s' }}

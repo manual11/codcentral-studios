@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { assetUrl } from '../lib/assetUrl'
 
 const transformationSteps = [
   { num: '01', title: 'Diagnosis', desc: 'Codcentral approached DrFarm and mapped every digital gap — no website, no Google presence, no online leads.' },
@@ -122,7 +123,7 @@ export default function FeaturedBusinessPage() {
                 {/* Top accent line */}
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, var(--color-tertiary), rgba(138,43,226,0.8), transparent)', zIndex: 2 }} />
                 <img
-                  src="/mjini entreprenuer winner 1.webp"
+                  src={assetUrl('/mjini entreprenuer winner 1.webp')}
                   alt="DrFarm Fabricators & Engineering Works — Kariobangi Light Industries"
                   style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
                 />

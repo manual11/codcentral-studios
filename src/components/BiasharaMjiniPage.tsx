@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Nav from './Nav'
 import Footer from './Footer'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { assetUrl } from '../lib/assetUrl'
 
 // ── Single module card on the page ──────────────────────────────────────────
 function GBPModule() {
@@ -156,7 +157,7 @@ function GBPModule() {
           {/* Right: illustration */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <img
-              src="/google business profile.webp"
+              src={assetUrl('/google business profile.webp')}
               alt="Google Business Profile illustration"
               style={{
                 width: '100%',
@@ -830,7 +831,7 @@ export default function BiasharaMjiniPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
               {/* Thumbnail */}
               <div style={{ width: 64, height: 64, overflow: 'hidden', flexShrink: 0, border: '0.5px solid rgba(230,28,46,0.3)' }}>
-                <img src="/mjini entreprenuer winner 1.webp" alt="DrFarm" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src={assetUrl('/mjini entreprenuer winner 1.webp')} alt="DrFarm" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>

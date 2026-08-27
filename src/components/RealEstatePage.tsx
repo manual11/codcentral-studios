@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { assetUrl } from '../lib/assetUrl'
 
 // ── Accent colour for this page ──
 const RE = '#c5001a'
@@ -64,7 +65,7 @@ function RENav({ scrolled, menuOpen, setMenuOpen, isMobile }: {
         borderBottom: scrolled ? '0.5px solid rgba(255,255,255,0.06)' : 'none',
       }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <img src="/logo.jpeg" alt="Codcentral Studios" style={{ width: 60, height: 60, borderRadius: 5, objectFit: 'cover', display: 'block' }} />
+          <img src={assetUrl('/logo.jpeg')} alt="Codcentral Studios" style={{ width: 60, height: 60, borderRadius: 5, objectFit: 'cover', display: 'block' }} />
           <span style={{
             fontFamily: "'Godens','Bebas Neue',sans-serif", fontWeight: 900,
             fontSize: 12, color: 'var(--color-secondary)', letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -773,7 +774,7 @@ function REFooter() {
       flexWrap: 'wrap', gap: 20,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <img src="/logo.jpeg" alt="Codcentral Studios" style={{ width: 56, height: 56, borderRadius: 4, objectFit: 'cover', display: 'block' }} />
+        <img src={assetUrl('/logo.jpeg')} alt="Codcentral Studios" style={{ width: 56, height: 56, borderRadius: 4, objectFit: 'cover', display: 'block' }} />
         <div>
           <div style={{
             fontFamily: "'Godens','Bebas Neue',sans-serif", fontWeight: 900,

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { assetUrl } from '../lib/assetUrl'
 
 const journey = [
   {
@@ -195,7 +196,7 @@ export default function About() {
           {/* Image fills top portion */}
           <div style={{ flex: 1, overflow: 'hidden', position: 'relative', minHeight: 140 }}>
             <img
-              src="/codcentral team.jpg"
+              src={assetUrl('/codcentral team.jpg')}
               alt="Codcentral team"
               style={{
                 width: '100%',

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { assetUrl } from '../lib/assetUrl'
 
 // Animated grid + orb background drawn on canvas
 function HeroCanvas() {
@@ -144,7 +145,7 @@ const heroAds = [
     cta: 'See Their Story →',
     href: '/featured-business',
     accent: 'var(--color-tertiary)',
-    img: '/mjini entreprenuer winner 1.webp',
+    img: assetUrl('/mjini entreprenuer winner 1.webp'),
   },
   {
     id: 2,
@@ -295,7 +296,7 @@ export default function Hero() {
       id="hero"
       style={{
         background: 'var(--color-primary)',
-        backgroundImage: 'url("/hero-bg.jpg")',
+        backgroundImage: `url("${assetUrl('/hero-bg.jpg')}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -620,7 +621,7 @@ export default function Hero() {
                 autoPlay muted loop playsInline controls
                 style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
               >
-                <source src="/pawslova demo.mp4" type="video/mp4" />
+                <source src={assetUrl('/pawslova demo.mp4')} type="video/mp4" />
               </video>
             </div>
 

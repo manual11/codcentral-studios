@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { assetUrl } from '../lib/assetUrl'
 
 // Dropdown items under "Modules"
 const modulesDropdown = [
@@ -73,7 +74,7 @@ export default function Nav() {
           style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
         >
           <img
-            src="/logo.jpeg"
+            src={assetUrl('/logo.jpeg')}
             alt="Codcentral Studios"
             style={{ width: 64, height: 64, borderRadius: 6, objectFit: 'cover', display: 'block' }}
           />
