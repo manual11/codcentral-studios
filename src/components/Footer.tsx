@@ -18,18 +18,18 @@ export default function Footer() {
 
         <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', alignItems: 'center' }}>
           {[
-            { label: 'About', href: '/about' },
-            { label: 'Modules', href: '/modules' },
-            { label: 'Blog', href: '/blog' },
-            { label: 'Contact', href: '/contact' },
+            { label: 'About',   to: '/about' },
+            { label: 'Modules', to: '/modules' },
+            { label: 'Blog',    to: '/blog' },
+            { label: 'Contact', to: '/contact' },
           ].map((link) => (
-            <a key={link.label} href={link.href} style={{
+            <Link key={link.label} to={link.to} style={{
               fontSize: 12, color: 'rgba(255,255,255,0.3)', textDecoration: 'none',
               letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'color 0.2s',
             }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-secondary)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.3)')}
-            >{link.label}</a>
+            >{link.label}</Link>
           ))}
           <Link to="/terms" style={{
             fontSize: 12, color: 'rgba(255,255,255,0.3)', textDecoration: 'none',
