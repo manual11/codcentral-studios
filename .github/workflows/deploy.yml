@@ -35,9 +35,20 @@ jobs:
           cp public/404.html dist/
           cp public/.htaccess dist/ 2>/dev/null || true
           cp public/_redirects dist/ 2>/dev/null || true
+          cp public/*.jpg dist/ 2>/dev/null || true
+          cp public/*.jpeg dist/ 2>/dev/null || true
+          cp public/*.webp dist/ 2>/dev/null || true
+          cp public/*.mp4 dist/ 2>/dev/null || true
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Update docs/ folder for GitHub Pages
+        run: |
+          rm -rf docs
+          cp -r dist docs
+
+      - name: Commit and push docs/
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "chore: update docs/ build [skip ci]"
+          git push
