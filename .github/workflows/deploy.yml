@@ -23,10 +23,18 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Copy public assets into dist
+        run: |
+          cp public/404.html dist/
+          cp public/.htaccess dist/ 2>/dev/null || true
+          cp public/_redirects dist/ 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
